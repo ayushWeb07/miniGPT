@@ -29,16 +29,20 @@ The project is inspired by architectures like **GPT-2**, but scaled down so you 
   - Multi-Head Causal Attention  
   - Transformer Blocks with RMSNorm  
   - FeedForward MLP  
-  - Token & Positional Embeddings  
+  - Token & Positional Embeddings
+  - Weight tying & initialization
+  
 - **Training pipeline**  
   - [TinyStories dataset](https://huggingface.co/datasets/roneneldan/TinyStories) (HuggingFace)  
   - Sliding window dataset loader  
   - Mixed precision training (AMP + GradScaler)  
   - LR warmup + cosine annealing  
-  - Gradient clipping & weight decay  
+  - Gradient clipping & weight decay
+    
 - **Inference & Generation**  
   - Greedy decoding (deterministic)  
-  - [Optional] Top-k sampling for creativity  
+  - [Optional] Top-k sampling for creativity
+ 
 - **Visualization**: Training vs validation loss plots  
 
 ---
@@ -69,8 +73,7 @@ pip install -r requirements.txt
 ## 📚 Dataset
 
 We use the roneneldan/TinyStories
- dataset, a synthetic dataset of short stories written in simple language.
-It is designed for training and experimenting with small LMs while keeping compute requirements low.
+ dataset, a synthetic dataset of short stories written in simple language, specifically tailored for 4-5 year old kids.
 
 ---
 
@@ -83,8 +86,6 @@ It is designed for training and experimenting with small LMs while keeping compu
     
 - Saves everything into a local `.txt` file.
     
-- Tokenizes + builds sliding window samples.
-
 
 ### 2️⃣ Train the Model
 
@@ -99,6 +100,12 @@ It is designed for training and experimenting with small LMs while keeping compu
 ### 3️⃣ Run Inference
 
 `python inference.py`
+
+- Initializes a tokenizer from tiktoken
+
+- Creates an input sample: Once upon a time there was a pumpkin.
+
+- Does `language modeling` on the above mentioned sample text
 
 ```bash
 Text (before generation): Once upon a time there was a pumpkin.
