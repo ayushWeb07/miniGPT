@@ -61,7 +61,7 @@ GPT_CONFIG_124M = {
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/ayushWeb07/miniGPT.git
 cd <repo-name>
 pip install -r requirements.txt
 ```
@@ -104,5 +104,18 @@ It is designed for training and experimenting with small LMs while keeping compu
 Text (before generation): Once upon a time there was a pumpkin.
 Text (after generation): Once upon a time there was a pumpkin. The pumpkin loved to...
 ```
+
+---
+
+## 📚 Resources Used
+
+This project was inspired and guided by the following resources:
+
+- [Karpathy's Let's reproduce GPT-2](https://youtu.be/l8pRSuU81PU)
+
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
+- [Build SLM from scratch](https://youtu.be/pOFcwcwtv3k)
+
 
 
