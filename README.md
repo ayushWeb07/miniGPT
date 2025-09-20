@@ -66,7 +66,7 @@ GPT_CONFIG_124M = {
 
 ```bash
 git clone https://github.com/ayushWeb07/miniGPT.git
-cd <repo-name>
+cd miniGPT
 pip install -r requirements.txt
 ```
 
